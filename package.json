@@ -1,0 +1,8 @@
+{
+  "name": "nerano-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dashboard de performance (glassmorphism) com proxy Google Sheets",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,28 @@
+/* ===== variables.css ===== */
+:root{
+  --c-primary:#1F6FE5; --c-primary-d:#1452B8;
+  --c-accent:#EF8A1F; --c-success:#1F9D56; --c-danger:#DC4632;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-display:'Plus Jakarta Sans','Inter',sans-serif;
+  --r-card:18px; --r-pill:999px; --r-sm:12px;
+  --maxw:1280px; --gap:18px;
+  --t-fast:.18s cubic-bezier(.4,0,.2,1); --t:.32s cubic-bezier(.4,0,.2,1);
+}
+:root[data-theme="light"]{
+  --bg:#EBF1F9; --text:#0F1F38; --muted:#5B6B87; --line:rgba(15,42,95,.10);
+  --glass-bg:linear-gradient(140deg,rgba(255,255,255,.55),rgba(255,255,255,.30));
+  --glass-border:rgba(255,255,255,.6);
+  --glass-shadow:0 8px 28px rgba(15,42,95,.10),inset 0 1px 0 rgba(255,255,255,.75),inset 0 -1px 0 rgba(0,0,0,.04);
+  --glass-top:rgba(255,255,255,.9);
+  --kpi-track:rgba(15,42,95,.08); --table-head:rgba(255,255,255,.55); --hover:rgba(31,111,229,.06);
+  --pop-bg:rgba(248,251,255,.92); --blob-o:.40;
+}
+:root[data-theme="dark"]{
+  --bg:#060B1A; --text:#ECF1FB; --muted:#94A7C6; --line:rgba(255,255,255,.08);
+  --glass-bg:linear-gradient(140deg,rgba(255,255,255,.09),rgba(255,255,255,.045));
+  --glass-border:rgba(255,255,255,.12);
+  --glass-shadow:0 12px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.10),inset 0 -1px 0 rgba(0,0,0,.25);
+  --glass-top:rgba(255,255,255,.22);
+  --kpi-track:rgba(255,255,255,.08); --table-head:rgba(255,255,255,.06); --hover:rgba(255,255,255,.04);
+  --pop-bg:rgba(13,22,42,.92); --blob-o:.50;
+}
