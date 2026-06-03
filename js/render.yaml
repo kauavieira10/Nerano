@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: nerano-dashboard
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: GOOGLE_SHEETS_API_KEY
+        sync: false
+      - key: GOOGLE_SHEETS_ID
+        value: 1MKzxzXYvaSttMp0DmZyk4b4FR-uvsnvVWX69j0MdjBM
+      - key: GOOGLE_SHEETS_NAME
+        value: "Diário Performance"
+      - key: GOOGLE_SHEETS_RANGE
+        value: A1:Z200

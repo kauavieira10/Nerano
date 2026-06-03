@@ -1,0 +1,16 @@
+/* ===== base.css ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;position:relative;-webkit-font-smoothing:antialiased;transition:background var(--t),color var(--t)}
+body::before,body::after,.app::before{content:"";position:fixed;border-radius:50%;filter:blur(100px);opacity:var(--blob-o);z-index:0;pointer-events:none;will-change:transform}
+body::before{width:560px;height:560px;background:radial-gradient(circle at 30% 30%,#1F6FE5,#0F3F93);top:-160px;left:-120px;animation:float1 22s ease-in-out infinite}
+body::after{width:520px;height:520px;background:radial-gradient(circle at 30% 30%,#EF8A1F,#D5641A);bottom:-180px;right:-120px;animation:float2 25s ease-in-out infinite}
+.app::before{width:480px;height:480px;background:radial-gradient(circle at 30% 30%,#7C5CFF,#4B2FCB);top:38%;left:45%;animation:float3 24s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(80px,60px) scale(1.12)}}
+@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-70px,-50px) scale(1.08)}}
+@keyframes float3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-60px,40px) scale(1.15)}}
+@media (max-width:768px){body::before{width:300px;height:300px}body::after{width:300px;height:300px}.app::before{width:280px;height:280px}}
+.app{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 20px 64px}
+
+.glass{background:var(--glass-bg);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid var(--glass-border);border-radius:var(--r-card);box-shadow:var(--glass-shadow);position:relative;overflow:hidden}
+.glass::before{content:"";position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--glass-top),transparent);pointer-events:none}
