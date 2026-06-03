@@ -112,6 +112,7 @@ function baseOpts(C,o){return {responsive:true,maintainAspectRatio:false,interac
   scales:{x:{grid:{display:false},ticks:{color:C.tick,font:{family:'Inter',size:11},maxTicksLimit:8}},y:{grid:{color:C.grid},ticks:{color:C.tick,font:{family:'Inter',size:11}},border:{display:false}}}};}
 
 function buildCharts(rows){
+  if(typeof Chart==='undefined'){console.warn('[Charts] Chart.js não disponível');return;}
   Object.values(charts).forEach(c=>c&&c.destroy());
   const C=themeColors(); const labels=rows.map(r=>r.data);
   const useG=state.platform!=='facebook', useF=state.platform!=='google';
@@ -230,7 +231,7 @@ function initTheme(){
 
 /* ===================== date-filter.js (calendário · portal pattern) ===================== */
 const Cal=(function(){
-  let pop=null, view=new Date(LAST.getFullYear(),LAST.getMonth(),1);
+  let pop=null, view=new Date(); // definido de verdade em open()
   let mode='range', selStart=null, selEnd=null;
 
   function open(){
@@ -351,4 +352,4 @@ async function boot(){
   setStatus(res.source);
   console.log('[App] ✓ Dashboard pronto · '+DATA.length+' dias ('+res.source+')');
 }
-document.addEventListener('DOMContentLoaded',boot);
+if(document.readyState!=='loading'){boot();}else{document.addEventListener('DOMContentLoaded',boot);}
